@@ -8,7 +8,8 @@ public class UpdateInfos : MonoBehaviour
 
     public InfosCharact infoCharact;
     public Text ID, sex, date, parfums;
-
+    public Text tscore, tlife;
+    public Score score;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,9 +19,11 @@ public class UpdateInfos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ID.text = infoCharact.id;
+        ID.text = "ID : " + infoCharact.id;
         sex.text = infoCharact.sexe;
         date.text = infoCharact.date;
         parfums.text = infoCharact.parfums;
+        tscore.text = "Score : " + score.score;
+        tlife.text = " Error max : " + score.life;
     }
 }

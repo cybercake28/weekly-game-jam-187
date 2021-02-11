@@ -17,17 +17,26 @@ public class comportement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        infosCharact.leave = false;
         nbboules = Random.Range(1, 4);
         setParfums();
-        if(Random.Range(0, 2) == 1)
+
+        if(Random.Range(0, 5) == 1)
         {
             sexeinfos = !sexe;
         }
-        setDate();
+        else
+        {
+            sexeinfos = sexe;
+        }
 
+        setDate();
+        infosCharact.sexeinfos = sexeinfos;
+        infosCharact.liste = parfums;
         infosCharact.parfums = "Number of scoops of ice cream asked : " + nbboules + " Flavors : " + parfums[0] + " " + parfums[1] + " " + parfums[2];
         infosCharact.id = "" + Random.Range(10000000, 99999999);
-        if (sexe == true)
+        
+        if (sexeinfos == true)
         {
             infosCharact.sexe = "Female";
         }
@@ -35,10 +44,16 @@ public class comportement : MonoBehaviour
         {
             infosCharact.sexe = "Male";
         }
+        
         infosCharact.date = "" + Random.Range(1, 32) + "/" + Random.Range(1, 13) +"/"+ dateNaissanceinfos;
+        
         if (Random.Range(0, 3) == 1)
         {
             bonnet.SetActive(true);
+        }
+        else
+        {
+            bonnet.SetActive(false);
         }
     }
 
@@ -47,12 +62,16 @@ public class comportement : MonoBehaviour
     {
         dateNaissanceinfos = Random.Range(1850, 1970);
 
-        if(dateNaissanceinfos < 1880 || dateNaissanceinfos > 1932)
+        if (dateNaissanceinfos < 1877 || dateNaissanceinfos > 1935)
         {
             isbirthright = false;
-            return;
+
         }
-        isbirthright = true;
+        else
+        {
+            isbirthright = true;
+        }
+        infosCharact.isbirthright = isbirthright;
     }
 
     private void setParfums() 
@@ -77,7 +96,16 @@ public class comportement : MonoBehaviour
                 parfums[i] = "Communist";
             }
         }
+
+        for(int j = 1; j < 3; j++)
+        {
+            if(parfums[j] == null)
+            {
+                parfums[j] = "";
+            }
+        }
     }
+
     // Update is called once per frame
     void Update()
     {

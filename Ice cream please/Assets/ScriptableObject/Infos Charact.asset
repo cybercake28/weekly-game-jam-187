@@ -12,7 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02c5e5684ebfe2e4198db83d406edf73, type: 3}
   m_Name: Infos Charact
   m_EditorClassIdentifier: 
-  parfums: 
-  date: 
-  sexe: 
-  id: 
+  parfums: 'Number of scoops of ice cream asked : 2 Flavors : Chocolate Chocolate
+    Strawberry'
+  date: 19/11/1969
+  isbirthright: 0
+  sexeinfos: 0
+  sexe: Male
+  id: 70251192
+  liste:
+  - Chocolate
+  - Chocolate
+  - Strawberry
+  leave: 0

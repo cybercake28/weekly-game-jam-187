@@ -5,6 +5,7 @@ using UnityEngine;
 public class setup : MonoBehaviour
 {
     public Glace glace;
+    public Score score;
 
     // Start is called before the first frame update
     void Start()
@@ -14,6 +15,8 @@ public class setup : MonoBehaviour
             glace.parfums[i] = "";
         }
         glace.position = new Vector3(-8.5f, 4.5f, 0f);
+        score.life = 3;
+        score.score = 0;
     }
 
 

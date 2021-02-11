@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: New Glace
   m_EditorClassIdentifier: 
   parfums:
-  - Chocolat
-  - Chocolat
-  - Chocolat
+  - 
+  - 
+  - 
+  position: {x: -8.5, y: 6.5999994, z: 0}
