@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UpdateInfos : MonoBehaviour
 {
@@ -25,5 +26,7 @@ public class UpdateInfos : MonoBehaviour
         parfums.text = infoCharact.parfums;
         tscore.text = "Score : " + score.score;
         tlife.text = " Error max : " + score.life;
+        if(score.life <= 0)
+            SceneManager.LoadScene("GameOver");
     }
 }

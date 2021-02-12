@@ -8,6 +8,7 @@ public class ButtonMove : MonoBehaviour
     public Glace glace;
     private bool isCorrect = true;
     public Score score;
+    public AudioSource correct, incorrect;
 
     // Start is called before the first frame update
     void Start()
@@ -34,12 +35,14 @@ public class ButtonMove : MonoBehaviour
             if (!isCorrect)
             {
                 score.life -= 1;
-                Debug.Log("NotCorrect");
+                incorrect.Play();
+                //                Debug.Log("NotCorrect");
             }
             else
             {
                 score.score += 1;
-                Debug.Log("IsCorrect");
+                correct.Play();
+                //              Debug.Log("IsCorrect");
             }
             infoCharact.leave = true;
             isCorrect = true;
@@ -66,12 +69,14 @@ public class ButtonMove : MonoBehaviour
             if (verif())
             {
                 score.life -= 1;
-                Debug.Log("NotCorrect");
+                incorrect.Play();
+                //            Debug.Log("NotCorrect");
             }
             else
             {
                 score.score += 1;
-                Debug.Log("IsCorrect");
+                correct.Play();
+                //          Debug.Log("IsCorrect");
             }
             infoCharact.leave = true;
         }

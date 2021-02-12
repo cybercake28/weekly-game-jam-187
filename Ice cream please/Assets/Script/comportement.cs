@@ -21,7 +21,7 @@ public class comportement : MonoBehaviour
         nbboules = Random.Range(1, 4);
         setParfums();
 
-        if(Random.Range(0, 5) == 1)
+        if(Random.Range(0, 10) == 1)
         {
             sexeinfos = !sexe;
         }
